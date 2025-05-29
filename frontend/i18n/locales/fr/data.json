@@ -1,0 +1,50 @@
+{
+  "pageTitle": "Importation de Données",
+  "pageDescription": "Gérer et importer vos fichiers de données",
+  "generateReport": "Générer un Rapport",
+  "searchPlaceholder": "Rechercher des fichiers...",
+  "dragDropArea": {
+    "title": "Glisser & Déposer des Fichiers",
+    "description": "Glissez et déposez des fichiers ici, ou cliquez pour parcourir",
+    "supportedFormats": "Formats pris en charge: PDF, CSV, JSON, TXT",
+    "maxSize": "Taille maximale du fichier: 10MB"
+  },
+  "fileTable": {
+    "name": "Nom",
+    "type": "Type",
+    "size": "Taille",
+    "uploadDate": "Date d'importation",
+    "status": "Statut",
+    "actions": "Actions"
+  },
+  "fileStatus": {
+    "processing": "En cours",
+    "completed": "Terminé",
+    "error": "Erreur"
+  },
+  "actions": {
+    "view": "Voir",
+    "download": "Télécharger",
+    "delete": "Supprimer"
+  },
+  "deleteDialog": {
+    "title": "Supprimer le Fichier",
+    "description": "Êtes-vous sûr de vouloir supprimer ce fichier? Cette action ne peut pas être annulée.",
+    "cancel": "Annuler",
+    "confirm": "Supprimer"
+  },
+  "noFiles": "Aucun fichier trouvé",
+  "uploadButton": "Importer des Fichiers",
+  "fileSize": {
+    "bytes": "octets",
+    "kb": "Ko",
+    "mb": "Mo",
+    "gb": "Go"
+  },
+  "notifications": {
+    "uploadSuccess": "Fichier importé avec succès",
+    "uploadError": "Échec de l'importation du fichier",
+    "deleteSuccess": "Fichier supprimé avec succès",
+    "deleteError": "Échec de la suppression du fichier"
+  }
+}

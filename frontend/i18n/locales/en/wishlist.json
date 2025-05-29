@@ -1,0 +1,19 @@
+{
+  "title": "My Wishlist",
+  "itemsCount": "{{count}} items saved",
+  "continueShopping": "Continue Shopping",
+  "loading": "Loading...",
+  "emptyWishlist": "Your wishlist is empty",
+  "startAdding": "Start adding items to your wishlist while browsing our store",
+  "exploreStore": "Explore Our Store",
+  "addedOn": "Added on {{date}}",
+  "share": "Share",
+  "sharing": "Sharing...",
+  "remove": "Remove",
+  "addToCart": "Add to Cart",
+  "review": "review",
+  "reviews": "reviews",
+  "uncategorized": "Uncategorized",
+  "productLinkCopied": "Product link copied to clipboard!",
+  "shareError": "Failed to share product"
+}

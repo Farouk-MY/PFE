@@ -1,0 +1,23 @@
+{
+  "title": "Customer Messages",
+  "subtitle": "Manage customer conversations",
+  "supportTeam": "Support Team",
+  "typeMessage": "Type your message...",
+  "sendMessage": "Send message",
+  "connected": "Connected",
+  "disconnected": "Disconnected",
+  "searchCustomers": "Search customers...",
+  "online": "Online",
+  "offline": "Offline",
+  "viewProfile": "View Profile",
+  "viewOrders": "View Orders",
+  "markAsRead": "Mark as Read",
+  "markAsUnread": "Mark as Unread",
+  "markAsResolved": "Mark as Resolved",
+  "blockUser": "Block User",
+  "noMessages": "No messages yet",
+  "startConversation": "Select a conversation to start messaging",
+  "noConversationSelected": "No conversation selected",
+  "selectCustomer": "Select a customer from the sidebar to view messages",
+  "browseConversations": "Browse conversations"
+}

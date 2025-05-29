@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: mediasoft_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: mediasoft
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - mediasoft_network
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: mediasoft_ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    networks:
+      - mediasoft_network
+
+  rag-chatbot:
+    build: .
+    container_name: mediasoft_rag_chatbot
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+      - ollama
+    environment:
+      - DATABASE_URL=postgresql://postgres:0000@localhost:5432/mediasoft
+      - OLLAMA_BASE_URL=http://ollama:11434
+      - OLLAMA_MODEL=llama3.2
+      - DEBUG=False
+    volumes:
+      - ./data:/app/data
+    networks:
+      - mediasoft_network
+
+networks:
+  mediasoft_network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  ollama_data:

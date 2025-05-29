@@ -1,0 +1,17 @@
+{
+  "adminPanel": "Admin Panel",
+  "manageStore": "Manage your store",
+  "theme": "Theme",
+  "notifications": "Notifications",
+  "messages": "Messages",
+  "logout": "Logout",
+  "dashboard": "Dashboard",
+  "analytics": "Analytics",
+  "orders": "Orders",
+  "products": "Products",
+  "categories": "Categories",
+  "customers": "Customers",
+  "aiData": "AI Data",
+  "reports": "Reports",
+  "settings": "Settings"
+}

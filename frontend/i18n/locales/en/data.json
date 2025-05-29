@@ -1,0 +1,50 @@
+{
+  "pageTitle": "Data Import",
+  "pageDescription": "Manage and import your data files",
+  "generateReport": "Generate Report",
+  "searchPlaceholder": "Search files...",
+  "dragDropArea": {
+    "title": "Drag & Drop Files",
+    "description": "Drag and drop files here, or click to browse",
+    "supportedFormats": "Supported formats: PDF, CSV, JSON, TXT",
+    "maxSize": "Maximum file size: 10MB"
+  },
+  "fileTable": {
+    "name": "Name",
+    "type": "Type",
+    "size": "Size",
+    "uploadDate": "Upload Date",
+    "status": "Status",
+    "actions": "Actions"
+  },
+  "fileStatus": {
+    "processing": "Processing",
+    "completed": "Completed",
+    "error": "Error"
+  },
+  "actions": {
+    "view": "View",
+    "download": "Download",
+    "delete": "Delete"
+  },
+  "deleteDialog": {
+    "title": "Delete File",
+    "description": "Are you sure you want to delete this file? This action cannot be undone.",
+    "cancel": "Cancel",
+    "confirm": "Delete"
+  },
+  "noFiles": "No files found",
+  "uploadButton": "Upload Files",
+  "fileSize": {
+    "bytes": "bytes",
+    "kb": "KB",
+    "mb": "MB",
+    "gb": "GB"
+  },
+  "notifications": {
+    "uploadSuccess": "File uploaded successfully",
+    "uploadError": "Failed to upload file",
+    "deleteSuccess": "File deleted successfully",
+    "deleteError": "Failed to delete file"
+  }
+}

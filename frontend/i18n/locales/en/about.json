@@ -1,0 +1,128 @@
+{
+  "badge": "About",
+  "hero": {
+    "title": "MediaSoft Tunisia",
+    "subtitle": "Your trusted technology partner in Tunisia. We create innovative software solutions that transform businesses and drive growth."
+  },
+  "story": {
+    "badge": "Our Story",
+    "title": "From Tunisian Startup to IT Leader",
+    "paragraphs": [
+      "Founded in 2010 in Tunis, MediaSoft began with a clear vision: to democratize access to cutting-edge technologies for Tunisian businesses. What started as a small team of passionate engineers has become one of Tunisia's leading IT sector companies.",
+      "Our journey is marked by innovative projects that have revolutionized how local businesses use technology. From our first enterprise management systems to our modern cloud solutions, we have always been at the forefront of technological innovation.",
+      "Today, MediaSoft is recognized as a trusted technology partner, with over 100 successful projects and expertise that extends from web and mobile development to artificial intelligence solutions and digital transformation."
+    ],
+    "button": "Discover Our Services",
+    "quote": "Our mission is to transform ideas into technological solutions that make a difference.",
+    "author": "— Ahmed Ben Salah, CEO & Founder"
+  },
+  "values": {
+    "badge": "Our Values",
+    "title": "What Guides Us",
+    "subtitle": "Our core values shape our approach to software development and client relationships",
+    "items": [
+      {
+        "title": "Innovation",
+        "description": "We stay at the forefront of technology trends, bringing cutting-edge solutions to our clients."
+      },
+      {
+        "title": "Quality",
+        "description": "We deliver robust, scalable solutions that meet the highest standards of performance and reliability."
+      },
+      {
+        "title": "Partnership",
+        "description": "We build long-term relationships with our clients, acting as their trusted technology partner."
+      },
+      {
+        "title": "Local Expertise",
+        "description": "Deep understanding of the Tunisian market combined with international best practices."
+      }
+    ]
+  },
+  "services": {
+    "badge": "Our Expertise",
+    "title": "Complete Technology Solutions",
+    "subtitle": "From design to implementation, we cover all your technology needs",
+    "items": [
+      {
+        "title": "Web Development",
+        "description": "Modern and responsive web applications using the latest technologies."
+      },
+      {
+        "title": "Mobile Applications",
+        "description": "Native and hybrid iOS and Android applications for all your needs."
+      },
+      {
+        "title": "ERP Systems",
+        "description": "Customized and integrated enterprise management solutions."
+      }
+    ]
+  },
+  "milestones": {
+    "badge": "Our Journey",
+    "title": "Key Milestones",
+    "subtitle": "The defining moments that shaped our growth and success",
+    "items": [
+      {
+        "year": "2010",
+        "title": "Company Founded",
+        "description": "MediaSoft was established in Tunis with a mission to provide innovative IT solutions to Tunisian businesses."
+      },
+      {
+        "year": "2013",
+        "title": "First Major Project",
+        "description": "Successfully delivered our first enterprise management system for a major Tunisian manufacturing company."
+      },
+      {
+        "year": "2016",
+        "title": "Mobile Development Launch",
+        "description": "Expanded services to include mobile app development, serving clients across North Africa."
+      },
+      {
+        "year": "2019",
+        "title": "Cloud Solutions Expert",
+        "description": "Became certified cloud solutions provider, helping businesses modernize their IT infrastructure."
+      },
+      {
+        "year": "2023",
+        "title": "Regional Recognition",
+        "description": "Recognized as one of Tunisia's leading IT service providers with 100+ successful projects delivered."
+      }
+    ]
+  },
+  "team": {
+    "badge": "Our Team",
+    "title": "The Experts Behind MediaSoft",
+    "subtitle": "A talented team of engineers, designers and technology strategists",
+    "members": [
+      {
+        "name": "Ahmed Ben Salah",
+        "role": "CEO & Founder",
+        "bio": "Software engineering expert with 20+ years of experience in the Tunisian tech industry. Founded MediaSoft to deliver world-class IT solutions."
+      },
+      {
+        "name": "Fatma Trabelsi",
+        "role": "CTO",
+        "bio": "Former senior developer at major European tech companies. Leads our technical innovation and software architecture."
+      },
+      {
+        "name": "Karim Mansouri",
+        "role": "Head of Development",
+        "bio": "Full-stack development specialist focused on creating scalable web and mobile applications for diverse industries."
+      },
+      {
+        "name": "Amina Bouaziz",
+        "role": "UX/UI Director",
+        "bio": "Award-winning designer specializing in creating intuitive and engaging user experiences for complex business applications."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to Transform Your Business?",
+    "subtitle": "Discover how MediaSoft can help you achieve your technology goals and accelerate your growth.",
+    "buttons": {
+      "services": "View Our Services",
+      "contact": "Contact Us"
+    }
+  }
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produits à faible stock</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .update-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .update-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Produits à faible stock</h1>
+    <table id="low-stock-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Désignation</th>
+                <th>Stock actuel</th>
+                <th>Seuil minimum</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Les lignes seront ajoutées dynamiquement ici -->
+        </tbody>
+    </table>
+
+    <script>
+        // Récupérer les produits à faible stock depuis l'API
+        fetch('http://localhost:3000/api/produit/admin/produits-faibles')
+            .then(response => response.json())
+            .then(data => {
+                const tableBody = document.querySelector('#low-stock-table tbody');
+                if (data.produits && data.produits.length > 0) {
+                    data.produits.forEach(produit => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${produit.id}</td>
+                            <td>${produit.designation}</td>
+                            <td>${produit.qteStock}</td>
+                            <td>${produit.seuilMin}</td>
+                            <td>
+                                <input type="number" id="qte-${produit.id}" placeholder="Quantité à ajouter">
+                                <button class="update-btn" onclick="updateStock(${produit.id})">Mettre à jour</button>
+                            </td>
+                        `;
+                        tableBody.appendChild(row);
+                    });
+                } else {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `<td colspan="5">Aucun produit à faible stock trouvé.</td>`;
+                    tableBody.appendChild(row);
+                }
+            })
+            .catch(error => console.error('Erreur:', error));
+
+        // Fonction pour mettre à jour le stock
+        function updateStock(productId) {
+            const quantity = document.getElementById(`qte-${productId}`).value;
+            if (!quantity || isNaN(quantity)) {
+                alert('Veuillez entrer une quantité valide.');
+                return;
+            }
+
+            fetch(`http://localhost:3000/api/produit/admin/produit/${productId}/stock`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ qteStock: parseInt(quantity) }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.message) {
+                    alert('Stock mis à jour avec succès');
+                    window.location.reload(); // Recharger la page pour afficher les nouvelles données
+                } else {
+                    alert('Erreur lors de la mise à jour du stock');
+                }
+            })
+            .catch(error => console.error('Erreur:', error));
+        }
+    </script>
+</body>
+</html>

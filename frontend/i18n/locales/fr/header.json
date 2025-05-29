@@ -1,0 +1,98 @@
+{
+  "logo": "TechVerse",
+  "navigation": {
+    "links": {
+      "home": "Accueil",
+      "shop": "Boutique",
+      "store": "Magasin",
+      "about": "À propos",
+      "contact": "Contact"
+    },
+    "categories": {
+      "gaming": {
+        "title": "Gaming",
+        "description": "Équipement de jeu haute performance",
+        "items": {
+          "gamingPCs": {
+            "title": "PC Gaming",
+            "description": "Configurations gaming sur mesure"
+          },
+          "gamingLaptops": {
+            "title": "Ordinateurs Portables Gaming",
+            "description": "Puissance de jeu portable"
+          },
+          "consoles": {
+            "title": "Consoles",
+            "description": "Consoles de jeu nouvelle génération"
+          },
+          "controllers": {
+            "title": "Manettes",
+            "description": "Contrôles de jeu de précision"
+          }
+        }
+      },
+      "components": {
+        "title": "Composants",
+        "description": "Composants PC premium",
+        "items": {
+          "gpus": {
+            "title": "Cartes Graphiques",
+            "description": "Cartes graphiques haut de gamme"
+          },
+          "cpus": {
+            "title": "Processeurs",
+            "description": "Processeurs puissants"
+          },
+          "memory": {
+            "title": "Mémoire",
+            "description": "RAM ultra-rapide"
+          },
+          "storage": {
+            "title": "Stockage",
+            "description": "SSD et HDD"
+          }
+        }
+      },
+      "peripherals": {
+        "title": "Périphériques",
+        "description": "Accessoires essentiels",
+        "items": {
+          "monitors": {
+            "title": "Écrans",
+            "description": "Écrans professionnels"
+          },
+          "keyboards": {
+            "title": "Claviers",
+            "description": "Claviers mécaniques"
+          },
+          "mice": {
+            "title": "Souris",
+            "description": "Souris gaming de précision"
+          },
+          "headsets": {
+            "title": "Casques",
+            "description": "Audio immersif"
+          }
+        }
+      }
+    }
+  },
+  "search": {
+    "placeholder": "Rechercher des produits..."
+  },
+  "userMenu": {
+    "account": "Mon Compte",
+    "dashboard": "Tableau de bord",
+    "orders": "Commandes",
+    "wishlist": "Liste de souhaits",
+    "messages": "Messages",
+    "settings": "Paramètres",
+    "logout": "Déconnexion",
+    "login": "Connexion",
+    "signup": "Inscription"
+  },
+  "cart": {
+    "title": "Panier",
+    "items": "{{count}} articles"
+  }
+}

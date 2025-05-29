@@ -1,0 +1,114 @@
+{
+  "hero": {
+    "badge": "FAQ",
+    "title": "Questions Fréquemment Posées",
+    "description": "Trouvez des réponses aux questions les plus courantes sur nos produits, services et politiques."
+  },
+  "search": {
+    "placeholder": "Rechercher des questions...",
+    "noResults": "Aucun résultat trouvé",
+    "tryAgain": "Veuillez essayer un autre terme de recherche ou parcourir les catégories ci-dessous.",
+    "clearButton": "Effacer la recherche"
+  },
+  "categories": {
+    "allCategories": "Toutes les Catégories",
+    "general": {
+      "title": "Général",
+      "questions": [
+        {
+          "question": "Qu'est-ce que TechVerse ?",
+          "answer": "TechVerse est une entreprise technologique de premier plan spécialisée dans le matériel informatique de pointe, les solutions AR/VR et les produits technologiques innovants. Fondée en 2018, nous nous engageons à rendre la technologie avancée accessible à tous."
+        },
+        {
+          "question": "Comment puis-je contacter le service client ?",
+          "answer": "Vous pouvez joindre notre équipe de support client par plusieurs canaux : par email à support@techverse.com, par téléphone au +1-234-567-8900, ou via le formulaire de contact sur notre site web. Nos heures de support sont du lundi au vendredi, de 9h à 18h EST."
+        },
+        {
+          "question": "Avez-vous des magasins physiques ?",
+          "answer": "Oui, nous avons des magasins phares dans les grandes villes de 15 pays. Vous pouvez trouver le magasin le plus proche en utilisant l'outil de localisation de magasin sur notre site web. Chaque magasin propose des démonstrations de produits, un support technique et toute la gamme des produits TechVerse."
+        }
+      ]
+    },
+    "products": {
+      "title": "Produits",
+      "questions": [
+        {
+          "question": "Quelle garantie accompagne les produits TechVerse ?",
+          "answer": "Tous les produits TechVerse sont accompagnés d'une garantie limitée standard de 2 ans qui couvre les défauts de fabrication et les pannes matérielles dans des conditions normales d'utilisation. Nos produits premium incluent une garantie prolongée de 3 ans. Vous pouvez également acheter une couverture de garantie supplémentaire jusqu'à 5 ans."
+        },
+        {
+          "question": "Puis-je personnaliser mon appareil TechVerse ?",
+          "answer": "Oui, beaucoup de nos produits offrent des options de personnalisation. Pour les ordinateurs et les ordinateurs portables, vous pouvez configurer des spécifications comme le processeur, la mémoire, le stockage et les options graphiques. Certains produits offrent également des personnalisations esthétiques comme des options de couleur et de gravure."
+        },
+        {
+          "question": "Vos produits sont-ils compatibles avec des accessoires tiers ?",
+          "answer": "Les produits TechVerse sont conçus pour fonctionner avec des accessoires et périphériques standard de l'industrie. Nous avons également un programme de certification pour les accessoires tiers qui garantit une compatibilité optimale. Recherchez le logo 'Compatible TechVerse' sur les produits partenaires."
+        }
+      ]
+    },
+    "shipping": {
+      "title": "Expédition",
+      "questions": [
+        {
+          "question": "Combien de temps prend l'expédition ?",
+          "answer": "L'expédition standard prend généralement 3 à 5 jours ouvrables dans les États-Unis continentaux, et 7 à 10 jours ouvrables pour les commandes internationales. Nous proposons également des options d'expédition accélérée qui peuvent livrer votre commande en 1 à 2 jours ouvrables pour la plupart des destinations."
+        },
+        {
+          "question": "Livrez-vous à l'international ?",
+          "answer": "Oui, nous livrons dans plus de 100 pays à travers le monde. Les délais et les coûts d'expédition internationale varient selon la destination. Veuillez noter que les clients sont responsables des droits d'importation, taxes ou frais de douane qui peuvent s'appliquer dans leur pays."
+        },
+        {
+          "question": "Comment puis-je suivre ma commande ?",
+          "answer": "Une fois votre commande expédiée, vous recevrez un email de confirmation avec les informations de suivi. Vous pouvez également suivre votre commande en vous connectant à votre compte TechVerse et en consultant l'historique de vos commandes, ou en utilisant l'outil de suivi des commandes sur notre site web."
+        }
+      ]
+    },
+    "returns": {
+      "title": "Retours et Remboursements",
+      "questions": [
+        {
+          "question": "Quelle est votre politique de retour ?",
+          "answer": "Nous offrons une politique de retour de 30 jours pour la plupart des produits. Les articles doivent être retournés dans leur emballage d'origine avec tous les accessoires inclus. Les produits configurés sur mesure peuvent avoir des conditions de retour différentes, qui seront spécifiées au moment de l'achat."
+        },
+        {
+          "question": "Comment puis-je initier un retour ?",
+          "answer": "Pour initier un retour, connectez-vous à votre compte TechVerse, accédez à l'historique de vos commandes et sélectionnez l'option 'Retourner l'article' pour le produit concerné. Vous recevrez une étiquette d'expédition de retour et des instructions. Alternativement, vous pouvez contacter notre équipe de support client pour obtenir de l'aide."
+        },
+        {
+          "question": "Combien de temps faut-il pour traiter les remboursements ?",
+          "answer": "Une fois que nous avons reçu votre article retourné, il faut généralement 3 à 5 jours ouvrables pour inspecter et traiter le retour. Après approbation, les remboursements sont émis sur votre mode de paiement d'origine et peuvent prendre 3 à 7 jours ouvrables supplémentaires pour apparaître, selon votre institution financière."
+        }
+      ]
+    },
+    "technical": {
+      "title": "Support Technique",
+      "questions": [
+        {
+          "question": "Où puis-je trouver des pilotes et des mises à jour logicielles ?",
+          "answer": "Tous les pilotes et mises à jour logicielles pour les produits TechVerse sont disponibles dans la section Support de notre site web. Vous pouvez rechercher par modèle de produit ou numéro de série. Notre logiciel TechVerse Update Assistant vous informe également automatiquement lorsque des mises à jour sont disponibles pour vos produits enregistrés."
+        },
+        {
+          "question": "Offrez-vous un support technique pour les produits plus anciens ?",
+          "answer": "Oui, nous fournissons un support technique pour tous les produits pendant au moins 5 ans après leur arrêt. Pour les produits hérités au-delà de cette période, nous maintenons une base de connaissances en ligne avec des guides de dépannage, des manuels d'utilisation et des forums communautaires."
+        },
+        {
+          "question": "Comment puis-je résoudre les problèmes courants avec mon appareil ?",
+          "answer": "Notre Centre de Support propose des guides de dépannage complets pour les problèmes courants. Chaque produit est également livré avec un Guide de Démarrage Rapide qui inclut des étapes de dépannage de base. Pour des problèmes plus complexes, vous pouvez utiliser notre Assistant Technique Virtuel ou contacter directement notre équipe de support technique."
+        }
+      ]
+    }
+  },
+  "contact": {
+    "title": "Vous avez encore des questions ?",
+    "description": "Notre équipe de support est là pour vous aider. Contactez-nous pour une assistance personnalisée concernant toute question non couverte dans notre FAQ.",
+    "button": "Contacter le Support",
+    "liveChat": "Chat en Direct",
+    "emailSupport": "Support par Email",
+    "callUs": "Appelez-nous",
+    "supportHours": "Heures de Support",
+    "weekdayHours": "Lundi - Vendredi: 24/7",
+    "weekendHours": "Samedi - Dimanche: 9h00 - 18h00"
+  },
+  "questionSingular": "Question",
+  "questionPlural": "Questions"
+}

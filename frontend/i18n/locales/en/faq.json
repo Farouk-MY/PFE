@@ -1,0 +1,114 @@
+{
+  "hero": {
+    "badge": "FAQ",
+    "title": "Frequently Asked Questions",
+    "description": "Find answers to the most common questions about our products, services, and policies."
+  },
+  "search": {
+    "placeholder": "Search questions...",
+    "noResults": "No results found",
+    "tryAgain": "Please try another search term or browse the categories below.",
+    "clearButton": "Clear Search"
+  },
+  "categories": {
+    "allCategories": "All Categories",
+    "general": {
+      "title": "General",
+      "questions": [
+        {
+          "question": "What is TechVerse?",
+          "answer": "TechVerse is a leading technology company specializing in cutting-edge computer hardware, AR/VR solutions, and innovative tech products. Founded in 2018, we are committed to making advanced technology accessible to everyone."
+        },
+        {
+          "question": "How can I contact customer service?",
+          "answer": "You can reach our customer support team through several channels: by email at support@techverse.com, by phone at +1-234-567-8900, or via the contact form on our website. Our support hours are Monday through Friday, 9am to 6pm EST."
+        },
+        {
+          "question": "Do you have physical stores?",
+          "answer": "Yes, we have flagship stores in major cities across 15 countries. You can find your nearest store using the store locator tool on our website. Each store offers product demonstrations, technical support, and the full range of TechVerse products."
+        }
+      ]
+    },
+    "products": {
+      "title": "Products",
+      "questions": [
+        {
+          "question": "What warranty comes with TechVerse products?",
+          "answer": "All TechVerse products come with a standard 2-year limited warranty that covers manufacturing defects and hardware failures under normal use. Our premium products include an extended 3-year warranty. You can also purchase additional warranty coverage for up to 5 years."
+        },
+        {
+          "question": "Can I customize my TechVerse device?",
+          "answer": "Yes, many of our products offer customization options. For computers and laptops, you can configure specifications like processor, memory, storage, and graphics options. Some products also offer aesthetic customizations like color options and engraving."
+        },
+        {
+          "question": "Are your products compatible with third-party accessories?",
+          "answer": "TechVerse products are designed to work with industry-standard accessories and peripherals. We also have a certification program for third-party accessories that ensures optimal compatibility. Look for the 'TechVerse Compatible' logo on partner products."
+        }
+      ]
+    },
+    "shipping": {
+      "title": "Shipping",
+      "questions": [
+        {
+          "question": "How long does shipping take?",
+          "answer": "Standard shipping typically takes 3-5 business days within the continental United States, and 7-10 business days for international orders. We also offer expedited shipping options that can deliver your order in 1-2 business days for most destinations."
+        },
+        {
+          "question": "Do you ship internationally?",
+          "answer": "Yes, we ship to over 100 countries worldwide. International shipping times and costs vary by destination. Please note that customers are responsible for any import duties, taxes, or customs fees that may apply in their country."
+        },
+        {
+          "question": "How can I track my order?",
+          "answer": "Once your order ships, you'll receive a confirmation email with tracking information. You can also track your order by logging into your TechVerse account and viewing your order history, or by using the order tracking tool on our website."
+        }
+      ]
+    },
+    "returns": {
+      "title": "Returns & Refunds",
+      "questions": [
+        {
+          "question": "What is your return policy?",
+          "answer": "We offer a 30-day return policy for most products. Items must be returned in their original packaging with all included accessories. Custom-configured products may have different return conditions, which will be specified at the time of purchase."
+        },
+        {
+          "question": "How do I initiate a return?",
+          "answer": "To initiate a return, log into your TechVerse account, access your order history, and select the 'Return Item' option for the relevant product. You'll receive a return shipping label and instructions. Alternatively, you can contact our customer support team for assistance."
+        },
+        {
+          "question": "How long does it take to process refunds?",
+          "answer": "Once we receive your returned item, it typically takes 3-5 business days to inspect and process the return. After approval, refunds are issued to your original payment method and may take an additional 3-7 business days to appear, depending on your financial institution."
+        }
+      ]
+    },
+    "technical": {
+      "title": "Technical Support",
+      "questions": [
+        {
+          "question": "Where can I find drivers and software updates?",
+          "answer": "All drivers and software updates for TechVerse products are available in the Support section of our website. You can search by product model or serial number. Our TechVerse Update Assistant software also automatically notifies you when updates are available for your registered products."
+        },
+        {
+          "question": "Do you offer technical support for older products?",
+          "answer": "Yes, we provide technical support for all products for at least 5 years after they are discontinued. For legacy products beyond this period, we maintain an online knowledge base with troubleshooting guides, user manuals, and community forums."
+        },
+        {
+          "question": "How can I troubleshoot common issues with my device?",
+          "answer": "Our Support Center offers comprehensive troubleshooting guides for common issues. Each product also comes with a Quick Start Guide that includes basic troubleshooting steps. For more complex issues, you can use our Virtual Tech Assistant or contact our technical support team directly."
+        }
+      ]
+    }
+  },
+  "contact": {
+    "title": "Still Have Questions?",
+    "description": "Our support team is here to help. Contact us for personalized assistance with any questions not covered in our FAQ.",
+    "button": "Contact Support",
+    "liveChat": "Live Chat",
+    "emailSupport": "Email Support",
+    "callUs": "Call Us",
+    "supportHours": "Support Hours",
+    "weekdayHours": "Monday - Friday: 24/7",
+    "weekendHours": "Saturday - Sunday: 9:00 AM - 6:00 PM"
+  },
+  "questionSingular": "Question",
+  "questionPlural": "Questions"
+}

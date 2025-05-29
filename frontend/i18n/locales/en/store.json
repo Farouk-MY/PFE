@@ -1,0 +1,74 @@
+{
+  "categories": {
+    "allCategories": "All Categories"
+  },
+  "filters": {
+    "title": "Filters",
+    "clearAll": "Clear All",
+    "activeFilters": "Active Filters",
+    "price": {
+      "title": "Price Range",
+      "min": "Min",
+      "max": "Max",
+      "to": "to"
+    },
+    "inStock": "In Stock Only",
+    "rating": "Minimum Rating",
+    "sort": {
+      "title": "Sort By",
+      "featured": "Featured",
+      "priceAsc": "Price: Low to High",
+      "priceDesc": "Price: High to Low",
+      "rating": "Highest Rated",
+      "newest": "Newest"
+    },
+    "refineSearch": "Refine your product search",
+    "ratingUp": "& Up",
+    "availability": "Availability"
+  },
+  "search": {
+    "placeholder": "Search products...",
+    "button": "Search",
+    "noResults": "No products found for",
+    "tryAgain": "Please try a different search term or browse categories"
+  },
+  "pagination": {
+    "showing": "Showing",
+    "of": "of",
+    "products": "products",
+    "previous": "Previous",
+    "next": "Next",
+    "page": "Page"
+  },
+  "emptyState": {
+    "title": "No Products Found",
+    "description": "We couldn't find any products matching your criteria.",
+    "clearFilters": "Clear Filters"
+  },
+  "favorites": {
+    "add": "Add to Favorites",
+    "remove": "Remove from Favorites",
+    "loginRequired": "Please login to add favorites",
+    "added": "Added to favorites",
+    "removed": "Removed from favorites",
+    "error": "Failed to update favorites"
+  },
+  "mobileFilters": {
+    "button": "Filters & Sort",
+    "title": "Filters & Sorting",
+    "apply": "Apply Filters",
+    "close": "Close"
+  },
+  "products": {
+    "title": "Products",
+    "inStock": "In Stock",
+    "outOfStock": "Out of Stock",
+    "addToCart": "Add to Cart",
+    "viewDetails": "View Details",
+    "reviews": "reviews",
+    "noReviews": "No reviews yet",
+    "featured": "FEATURED",
+    "onlyLeft": "Only",
+    "leftInStock": "left in stock"
+  }
+}

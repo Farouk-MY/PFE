@@ -1,0 +1,62 @@
+{
+  "hero": {
+    "title": "Get in Touch",
+    "description": "Have questions about our products or services? We're here to help! Reach out to our dedicated team for personalized assistance.",
+    "contactButton": "Contact Us Now",
+    "faqsButton": "View FAQs"
+  },
+  "contactInfo": {
+    "title": "Contact Information",
+    "email": {
+      "label": "Email",
+      "value": "support@techverse.com"
+    },
+    "phone": {
+      "label": "Phone",
+      "value": "+1 (234) 567-890"
+    },
+    "address": {
+      "label": "Address",
+      "value": "123 Tech Street\nSilicon Valley, CA 94025"
+    },
+    "hours": {
+      "label": "Business Hours",
+      "value": "Monday - Friday: 9AM - 6PM\nSaturday: 10AM - 4PM"
+    }
+  },
+  "liveChat": {
+    "title": "Live Chat Support",
+    "description": "Need immediate assistance? Our chat support team is available 24/7 to help you with any questions or issues.",
+    "button": "Start Chat Now"
+  },
+  "contactForm": {
+    "title": "Send Us a Message",
+    "name": {
+      "label": "Your Name",
+      "placeholder": "Enter your full name"
+    },
+    "email": {
+      "label": "Email Address",
+      "placeholder": "Enter your email address"
+    },
+    "subject": {
+      "label": "Subject",
+      "placeholder": "What is this regarding?"
+    },
+    "type": {
+      "label": "Inquiry Type",
+      "placeholder": "Select an inquiry type"
+    },
+    "message": {
+      "label": "Your Message",
+      "placeholder": "Please provide as much detail as possible..."
+    },
+    "submit": "Send Message",
+    "success": "Message sent successfully! We'll get back to you soon.",
+    "error": "Failed to send message. Please try again."
+  },
+  "faqs": {
+    "title": "Frequently Asked Questions",
+    "description": "Find quick answers to common questions about our products and services."
+  }
+}

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistiques des Avis</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .chart-container {
+            margin: 30px 0;
+            position: relative;
+            height: 400px;
+        }
+        .stats-card {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            background-color: white;
+            transition: transform 0.2s;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .product-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .rating {
+            color: #ffc107;
+            font-weight: bold;
+        }
+        .btn {
+            background-color: #4e73df;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .btn:hover {
+            background-color: #2e59d9;
+        }
+        #productReviews {
+            margin-top: 30px;
+        }
+        .review-item {
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Statistiques des Avis</h1>
+        
+        <div class="stats-card">
+            <h2>Statistiques Globales</h2>
+            <div class="chart-container">
+                <canvas id="globalStatsChart"></canvas>
+            </div>
+            <div id="globalStats"></div>
+        </div>
+        
+        <div class="stats-card">
+            <h2>Top 10 des Produits les Mieux Notés</h2>
+            <div class="chart-container">
+                <canvas id="topProductsChart"></canvas>
+            </div>
+            <div class="product-grid" id="topProductsGrid"></div>
+        </div>
+        
+        <div class="stats-card">
+            <h2>Avis par Produit</h2>
+            <div>
+                <label for="productId">ID du Produit:</label>
+                <input type="number" id="productId" placeholder="Entrez l'ID du produit">
+                <button class="btn" onclick="loadProductReviews()">Charger les Avis</button>
+            </div>
+            <div class="chart-container">
+                <canvas id="productStatsChart"></canvas>
+            </div>
+            <div id="productStats"></div>
+            <div id="productReviews"></div>
+        </div>
+    </div>
+
+    <script>
+        // Variables pour stocker les graphiques
+        let globalStatsChart;
+        let topProductsChart;
+        let productStatsChart;
+        
+        // Charger les données au démarrage
+        document.addEventListener('DOMContentLoaded', function() {
+            loadGlobalStats();
+            loadTopProducts();
+        });
+        
+        // Fonction pour charger les statistiques globales
+        async function loadGlobalStats() {
+            try {
+                const response = await axios.get('/api/avis/stats');
+                const data = response.data;
+                
+                // Afficher les données textuelles
+                document.getElementById('globalStats').innerHTML = `
+                    <p>Note moyenne globale: <span class="rating">${data.stats_globales.note_moyenne.toFixed(1)}/5</span></p>
+                    <p>Nombre total d'avis: ${data.stats_globales.nombre_total_avis}</p>
+                `;
+                
+                // Créer le graphique
+                const ctx = document.getElementById('globalStatsChart').getContext('2d');
+                
+                if (globalStatsChart) {
+                    globalStatsChart.destroy();
+                }
+                
+                globalStatsChart = new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Note Moyenne'],
+                        datasets: [{
+                            label: 'Note Moyenne',
+                            data: [data.stats_globales.note_moyenne, 5 - data.stats_globales.note_moyenne],
+                            backgroundColor: [
+                                '#4e73df',
+                                '#eaeaea'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return context.label + ': ' + context.raw.toFixed(1) + '/5';
+                                    }
+                                }
+                            },
+                            legend: {
+                                position: 'bottom'
+                            }
+                        },
+                        circumference: 180,
+                        rotation: -90
+                    }
+                });
+            } catch (error) {
+                console.error('Erreur lors du chargement des statistiques globales:', error);
+                alert('Erreur lors du chargement des données');
+            }
+        }
+        
+        // Fonction pour charger les produits les mieux notés
+        async function loadTopProducts() {
+            try {
+                const response = await axios.get('/api/avis/stats');
+                const data = response.data;
+                
+                // Afficher les produits dans la grille
+                const productsGrid = document.getElementById('topProductsGrid');
+                productsGrid.innerHTML = '';
+                
+                data.top_produits.forEach(product => {
+                    const productCard = document.createElement('div');
+                    productCard.className = 'product-card';
+                    productCard.innerHTML = `
+                        ${product.image ? `<img src="${product.image}" alt="${product.designation}" class="product-image">` : ''}
+                        <h3>${product.designation || 'Produit #' + product.produit_id}</h3>
+                        <p class="rating">Note: ${product.note_moyenne.toFixed(1)}/5</p>
+                        <p>${product.nombre_avis} avis</p>
+                        <button class="btn" onclick="loadSpecificProduct(${product.produit_id})">Voir les avis</button>
+                    `;
+                    productsGrid.appendChild(productCard);
+                });
+                
+                // Créer le graphique des top produits
+                const ctx = document.getElementById('topProductsChart').getContext('2d');
+                
+                if (topProductsChart) {
+                    topProductsChart.destroy();
+                }
+                
+                // Préparer les données pour le graphique
+                const labels = data.top_produits.map(p => p.designation || 'Produit #' + p.produit_id);
+                const notes = data.top_produits.map(p => p.note_moyenne);
+                const avisCounts = data.top_produits.map(p => p.nombre_avis);
+                
+                topProductsChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [
+                            {
+                                label: 'Note Moyenne',
+                                data: notes,
+                                backgroundColor: '#4e73df',
+                                borderColor: '#2e59d9',
+                                borderWidth: 1,
+                                yAxisID: 'y'
+                            },
+                            {
+                                label: "Nombre d'avis",
+                                data: avisCounts,
+                                backgroundColor: '#1cc88a',
+                                borderColor: '#17a673',
+                                borderWidth: 1,
+                                type: 'line',
+                                yAxisID: 'y1'
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                type: 'linear',
+                                display: true,
+                                position: 'left',
+                                title: {
+                                    display: true,
+                                    text: 'Note Moyenne'
+                                },
+                                min: 0,
+                                max: 5
+                            },
+                            y1: {
+                                type: 'linear',
+                                display: true,
+                                position: 'right',
+                                title: {
+                                    display: true,
+                                    text: "Nombre d'avis"
+                                },
+                                grid: {
+                                    drawOnChartArea: false
+                                }
+                            }
+                        },
+                        plugins: {
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        let label = context.dataset.label || '';
+                                        if (label) {
+                                            label += ': ';
+                                        }
+                                        if (context.datasetIndex === 0) {
+                                            label += context.raw.toFixed(1) + '/5';
+                                        } else {
+                                            label += context.raw;
+                                        }
+                                        return label;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            } catch (error) {
+                console.error('Erreur lors du chargement des top produits:', error);
+                alert('Erreur lors du chargement des données');
+            }
+        }
+        
+        // Fonction pour charger les avis d'un produit spécifique
+        async function loadProductReviews() {
+            const productId = document.getElementById('productId').value;
+            if (!productId) {
+                alert('Veuillez entrer un ID de produit');
+                return;
+            }
+            
+            try {
+                const response = await axios.get(`/api/avis/produit/${productId}`);
+                const data = response.data;
+                
+                // Afficher les statistiques du produit
+                document.getElementById('productStats').innerHTML = `
+                    <p>Note moyenne: <span class="rating">${data.note_moyenne.toFixed(1)}/5</span></p>
+                    <p>Nombre d'avis: ${data.nombre_avis}</p>
+                `;
+                
+                // Créer le graphique de répartition des notes
+                const ctx = document.getElementById('productStatsChart').getContext('2d');
+                
+                if (productStatsChart) {
+                    productStatsChart.destroy();
+                }
+                
+                // Calculer la répartition des notes (1-5 étoiles)
+                const ratingDistribution = [0, 0, 0, 0, 0];
+                data.avis.forEach(review => {
+                    const rating = Math.round(review.note);
+                    if (rating >= 1 && rating <= 5) {
+                        ratingDistribution[5 - rating]++;
+                    }
+                });
+                
+                productStatsChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['5 étoiles', '4 étoiles', '3 étoiles', '2 étoiles', '1 étoile'],
+                        datasets: [{
+                            label: "Nombre d'avis",
+                            data: ratingDistribution,
+                            backgroundColor: [
+                                '#1cc88a',
+                                '#36b9cc',
+                                '#f6c23e',
+                                '#e74a3b',
+                                '#858796'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: "Nombre d'avis"
+                                }
+                            }
+                        },
+                        plugins: {
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        const percentage = (context.raw / data.nombre_avis * 100).toFixed(1);
+                                        return `${context.raw} avis (${percentage}%)`;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+                
+                // Afficher les avis
+                const reviewsContainer = document.getElementById('productReviews');
+                reviewsContainer.innerHTML = '<h3>Derniers Avis</h3>';
+                
+                if (data.avis.length === 0) {
+                    reviewsContainer.innerHTML += '<p>Aucun avis pour ce produit</p>';
+                    return;
+                }
+                
+                data.avis.forEach(review => {
+                    const reviewItem = document.createElement('div');
+                    reviewItem.className = 'review-item';
+                    
+                    // Créer les étoiles
+                    let stars = '';
+                    for (let i = 1; i <= 5; i++) {
+                        stars += i <= Math.round(review.note) ? '★' : '☆';
+                    }
+                    
+                    reviewItem.innerHTML = `
+                        <div style="display: flex; justify-content: space-between;">
+                            <div>
+                                <strong>${review.utilisateur.prenom} ${review.utilisateur.nom}</strong>
+                                <span class="rating" style="margin-left: 10px;">${stars} (${review.note.toFixed(1)})</span>
+                            </div>
+                            <div style="color: #666; font-size: 0.9em;">
+                                ${new Date(review.date).toLocaleDateString()}
+                            </div>
+                        </div>
+                        ${review.commentaire ? `<p style="margin-top: 5px;">${review.commentaire}</p>` : '<p style="color: #666; font-style: italic;">Aucun commentaire</p>'}
+                    `;
+                    
+                    reviewsContainer.appendChild(reviewItem);
+                });
+            } catch (error) {
+                console.error('Erreur lors du chargement des avis du produit:', error);
+                if (error.response && error.response.status === 404) {
+                    alert('Produit non trouvé');
+                } else {
+                    alert('Erreur lors du chargement des données');
+                }
+            }
+        }
+        
+        // Fonction pour charger un produit spécifique depuis le top 10
+        function loadSpecificProduct(productId) {
+            document.getElementById('productId').value = productId;
+            loadProductReviews();
+        }
+    </script>
+</body>
+</html>

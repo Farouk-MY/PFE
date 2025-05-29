@@ -1,0 +1,19 @@
+{
+  "title": "Ma Liste de Souhaits",
+  "itemsCount": "{{count}} articles sauvegardés",
+  "continueShopping": "Continuer les Achats",
+  "loading": "Chargement...",
+  "emptyWishlist": "Votre liste de souhaits est vide",
+  "startAdding": "Commencez à ajouter des articles à votre liste de souhaits en parcourant notre magasin",
+  "exploreStore": "Explorer Notre Magasin",
+  "addedOn": "Ajouté le {{date}}",
+  "share": "Partager",
+  "sharing": "Partage en cours...",
+  "remove": "Supprimer",
+  "addToCart": "Ajouter au Panier",
+  "review": "avis",
+  "reviews": "avis",
+  "uncategorized": "Non catégorisé",
+  "productLinkCopied": "Lien du produit copié dans le presse-papiers !",
+  "shareError": "Échec du partage du produit"
+}

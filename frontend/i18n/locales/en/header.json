@@ -1,0 +1,98 @@
+{
+  "logo": "TechVerse",
+  "navigation": {
+    "links": {
+      "home": "Home",
+      "shop": "Shop",
+      "store": "Store",
+      "about": "About",
+      "contact": "Contact"
+    },
+    "categories": {
+      "gaming": {
+        "title": "Gaming",
+        "description": "High-performance gaming equipment",
+        "items": {
+          "gamingPCs": {
+            "title": "Gaming PCs",
+            "description": "Custom-built gaming rigs"
+          },
+          "gamingLaptops": {
+            "title": "Gaming Laptops",
+            "description": "Portable gaming power"
+          },
+          "consoles": {
+            "title": "Consoles",
+            "description": "Next-gen gaming consoles"
+          },
+          "controllers": {
+            "title": "Controllers",
+            "description": "Precision gaming controls"
+          }
+        }
+      },
+      "components": {
+        "title": "Components",
+        "description": "Premium PC components",
+        "items": {
+          "gpus": {
+            "title": "GPUs",
+            "description": "High-end graphics cards"
+          },
+          "cpus": {
+            "title": "CPUs",
+            "description": "Powerful processors"
+          },
+          "memory": {
+            "title": "Memory",
+            "description": "Ultra-fast RAM"
+          },
+          "storage": {
+            "title": "Storage",
+            "description": "SSDs and HDDs"
+          }
+        }
+      },
+      "peripherals": {
+        "title": "Peripherals",
+        "description": "Essential accessories",
+        "items": {
+          "monitors": {
+            "title": "Monitors",
+            "description": "Professional displays"
+          },
+          "keyboards": {
+            "title": "Keyboards",
+            "description": "Mechanical keyboards"
+          },
+          "mice": {
+            "title": "Mice",
+            "description": "Precision gaming mice"
+          },
+          "headsets": {
+            "title": "Headsets",
+            "description": "Immersive audio"
+          }
+        }
+      }
+    }
+  },
+  "search": {
+    "placeholder": "Search products..."
+  },
+  "userMenu": {
+    "account": "My Account",
+    "dashboard": "Dashboard",
+    "orders": "Orders",
+    "wishlist": "Wishlist",
+    "messages": "Messages",
+    "settings": "Settings",
+    "logout": "Log Out",
+    "login": "Log In",
+    "signup": "Sign Up"
+  },
+  "cart": {
+    "title": "Cart",
+    "items": "{{count}} items"
+  }
+}

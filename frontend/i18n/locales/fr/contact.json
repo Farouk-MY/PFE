@@ -1,0 +1,62 @@
+{
+  "hero": {
+    "title": "Contactez-nous",
+    "description": "Vous avez des questions sur nos produits ou services ? Nous sommes là pour vous aider ! Contactez notre équipe dédiée pour une assistance personnalisée.",
+    "contactButton": "Nous Contacter",
+    "faqsButton": "Voir les FAQ"
+  },
+  "contactInfo": {
+    "title": "Informations de Contact",
+    "email": {
+      "label": "Email",
+      "value": "support@techverse.com"
+    },
+    "phone": {
+      "label": "Téléphone",
+      "value": "+1 (234) 567-890"
+    },
+    "address": {
+      "label": "Adresse",
+      "value": "123 Tech Street\nSilicon Valley, CA 94025"
+    },
+    "hours": {
+      "label": "Heures d'Ouverture",
+      "value": "Lundi - Vendredi: 9h - 18h\nSamedi: 10h - 16h"
+    }
+  },
+  "liveChat": {
+    "title": "Support par Chat en Direct",
+    "description": "Besoin d'une assistance immédiate ? Notre équipe de support par chat est disponible 24/7 pour vous aider avec toutes vos questions ou problèmes.",
+    "button": "Démarrer le Chat"
+  },
+  "contactForm": {
+    "title": "Envoyez-nous un Message",
+    "name": {
+      "label": "Votre Nom",
+      "placeholder": "Entrez votre nom complet"
+    },
+    "email": {
+      "label": "Adresse Email",
+      "placeholder": "Entrez votre adresse email"
+    },
+    "subject": {
+      "label": "Sujet",
+      "placeholder": "De quoi s'agit-il ?"
+    },
+    "type": {
+      "label": "Type de Demande",
+      "placeholder": "Sélectionnez un type de demande"
+    },
+    "message": {
+      "label": "Votre Message",
+      "placeholder": "Veuillez fournir autant de détails que possible..."
+    },
+    "submit": "Envoyer le Message",
+    "success": "Message envoyé avec succès ! Nous vous répondrons bientôt.",
+    "error": "Échec de l'envoi du message. Veuillez réessayer."
+  },
+  "faqs": {
+    "title": "Questions Fréquemment Posées",
+    "description": "Trouvez des réponses rapides aux questions courantes sur nos produits et services."
+  }
+}

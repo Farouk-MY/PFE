@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produits Tendances</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        .product-card {
+            transition: transform 0.3s;
+            margin-bottom: 20px;
+            height: 100%;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .badge-tendance {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .product-img {
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-body {
+            display: flex;
+            flex-direction: column;
+        }
+        .btn-details {
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">Mon E-commerce</a>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <h1 class="text-center mb-5">Produits les plus populaires</h1>
+        
+        <div class="alert alert-info mb-4">
+            Découvrez les produits préférés de nos clients
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="products-container">
+            <div class="col-12 text-center">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Chargement...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const container = document.getElementById('products-container');
+            
+            try {
+                const response = await fetch('/api/produit/produits/tendance');
+                
+                if (!response.ok) {
+                    throw new Error('Erreur de réseau');
+                }
+                
+                const products = await response.json();
+                
+                if (!products || products.length === 0) {
+                    container.innerHTML = `
+                        <div class="col-12">
+                            <div class="alert alert-warning">
+                                Aucun produit populaire pour le moment
+                            </div>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                container.innerHTML = products.map((product, index) => `
+                    <div class="col">
+                        <div class="card product-card h-100 position-relative">
+                            ${index < 3 ? `<span class="badge rounded-pill bg-danger badge-tendance">Top ${index + 1}</span>` : ''}
+                            <img src="${product.images?.[0] || 'https://via.placeholder.com/300'}" class="card-img-top product-img" alt="${product.designation}">
+                            <div class="card-body">
+                                <h5 class="card-title">${product.designation}</h5>
+                                <p class="card-text text-muted">${product.description || 'Description non disponible'}</p>
+                                <div class="mt-auto">
+                                    <p class="h5 text-success mb-2">${product.prix?.toFixed(2)} €</p>
+                                    <p class="text-primary mb-3">
+                                        <i class="bi bi-people-fill"></i> ${product.clientsUniques} clients satisfaits
+                                    </p>
+                                    <a href="/api/produit/${product.id}" class="btn btn-primary btn-details">
+                                        Voir détails
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Erreur:', error);
+                container.innerHTML = `
+                    <div class="col-12">
+                        <div class="alert alert-danger">
+                            Erreur lors du chargement des produits. Veuillez réessayer.
+                        </div>
+                    </div>
+                `;
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

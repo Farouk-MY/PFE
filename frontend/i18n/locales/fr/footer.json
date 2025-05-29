@@ -1,0 +1,36 @@
+{
+  "about": {
+    "title": "À propos de TechVerse",
+    "description": "Votre destination premium pour la technologie de pointe. Nous offrons la meilleure sélection de produits et solutions innovants."
+  },
+  "quickLinks": {
+    "title": "Liens Rapides",
+    "aboutUs": "À propos de nous",
+    "contact": "Contact",
+    "blog": "Blog",
+    "faqs": "FAQs"
+  },
+  "customerService": {
+    "title": "Service Client",
+    "shipping": "Informations de livraison",
+    "returns": "Retours & Échanges",
+    "sizeGuide": "Guide des tailles",
+    "privacyPolicy": "Politique de confidentialité"
+  },
+  "connect": {
+    "title": "Connectez-vous avec nous",
+    "language": "Langue",
+    "newsletter": {
+      "title": "Newsletter",
+      "description": "Abonnez-vous pour recevoir des offres spéciales et des mises à jour",
+      "placeholder": "Entrez votre email",
+      "button": "S'abonner"
+    }
+  },
+  "copyright": "© {{year}} TechVerse. Tous droits réservés.",
+  "legal": {
+    "terms": "Conditions d'utilisation",
+    "privacy": "Politique de confidentialité",
+    "cookies": "Politique des cookies"
+  }
+}

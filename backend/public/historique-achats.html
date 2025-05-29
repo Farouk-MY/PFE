@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historique des Achats - Tous les Clients</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+    <style>
+        .badge-livré { background-color: #28a745; }
+        .badge-en-attente { background-color: #ffc107; color: #000; }
+        .badge-annulé { background-color: #dc3545; }
+        .product-details { display: none; }
+        .clickable { cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="mb-4">Historique des Achats - Tous les Clients</h1>
+        
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5 class="mb-0">Filtres</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="clientFilter" class="form-label">Client</label>
+                        <select id="clientFilter" class="form-select">
+                            <option value="">Tous les clients</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="statusFilter" class="form-label">Statut</label>
+                        <select id="statusFilter" class="form-select">
+                            <option value="">Tous les statuts</option>
+                            <option value="Livré">Livré</option>
+                            <option value="En attente">En attente</option>
+                            <option value="Annulé">Annulé</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="dateFilter" class="form-label">Date</label>
+                        <input type="date" id="dateFilter" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table id="historiqueTable" class="table table-striped table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID Commande</th>
+                        <th>Date</th>
+                        <th>Client</th>
+                        <th>Nb. Produits</th>
+                        <th>Total</th>
+                        <th>Points</th>
+                        <th>Statut</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Les données seront chargées via JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal pour les détails -->
+    <div class="modal fade" id="detailsModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Détails de la commande <span id="commandeId"></span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <p><strong>Client:</strong> <span id="clientName"></span></p>
+                            <p><strong>Email:</strong> <span id="clientEmail"></span></p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Date:</strong> <span id="commandeDate"></span></p>
+                            <p><strong>Statut:</strong> <span id="commandeStatut" class="badge"></span></p>
+                        </div>
+                    </div>
+                    
+                    <h6>Produits</h6>
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>Produit</th>
+                                <th>Quantité</th>
+                                <th>Prix unitaire</th>
+                                <th>Total</th>
+                                <th>Points</th>
+                            </tr>
+                        </thead>
+                        <tbody id="produitsList">
+                        </tbody>
+                    </table>
+                    
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <p><strong>Remise:</strong> <span id="commandeRemise"></span>%</p>
+                            <p><strong>Livraison:</strong> <span id="commandeLivraison"></span></p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Points utilisés:</strong> <span id="pointsUtilises"></span></p>
+                            <p><strong>Points gagnés:</strong> <span id="pointsGagnes"></span></p>
+                            <p class="fw-bold">Total à payer: <span id="commandeTotal"></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Initialiser DataTable
+            const table = $('#historiqueTable').DataTable({
+                ajax: {
+                    url: '/api/historique-global',
+                    dataSrc: ''
+                },
+                columns: [
+                    { data: 'id' },
+                    { 
+                        data: 'date',
+                        render: function(data) {
+                            return new Date(data).toLocaleDateString();
+                        }
+                    },
+                    { 
+                        data: 'client',
+                        render: function(data) {
+                            return `${data.prenom} ${data.nom}`;
+                        }
+                    },
+                    { 
+                        data: 'produits',
+                        render: function(data) {
+                            return data.length;
+                        }
+                    },
+                    { 
+                        data: 'montantTotal',
+                        render: function(data) {
+                            return `${data.toFixed(2)} DT`;
+                        }
+                    },
+                    { 
+                        data: null,
+                        render: function(data) {
+                            return `U: ${data.pointsUtilises} | G: ${data.pointsGagnes}`;
+                        }
+                    },
+                    { 
+                        data: 'statutLivraison',
+                        render: function(data) {
+                            const badgeClass = data === 'Livré' ? 'badge-livré' : 
+                                             data === 'En attente' ? 'badge-en-attente' : 'badge-annulé';
+                            return `<span class="badge ${badgeClass}">${data}</span>`;
+                        }
+                    },
+                    {
+                        data: null,
+                        render: function() {
+                            return `<button class="btn btn-sm btn-primary btn-view">Voir</button>`;
+                        }
+                    }
+                ]
+            });
+
+            // Remplir le filtre client
+            $.get('/api/historique-global', function(data) {
+                const clients = [...new Set(data.map(item => item.client.id))];
+                clients.forEach(clientId => {
+                    const client = data.find(item => item.client.id === clientId).client;
+                    $('#clientFilter').append(`<option value="${clientId}">${client.prenom} ${client.nom}</option>`);
+                });
+            });
+
+            // Appliquer les filtres
+            $('#clientFilter, #statusFilter, #dateFilter').on('change', function() {
+                table.column(2).search($('#clientFilter').val());
+                table.column(6).search($('#statusFilter').val());
+                
+                const dateValue = $('#dateFilter').val();
+                if (dateValue) {
+                    const searchDate = new Date(dateValue).toLocaleDateString();
+                    table.column(1).search(searchDate).draw();
+                } else {
+                    table.column(1).search('').draw();
+                }
+                
+                table.draw();
+            });
+
+            // Gérer le clic sur le bouton Voir
+            $('#historiqueTable tbody').on('click', '.btn-view', function() {
+                const data = table.row($(this).parents('tr')).data();
+                showDetailsModal(data);
+            });
+
+            // Fonction pour afficher les détails dans le modal
+            function showDetailsModal(data) {
+                $('#commandeId').text(data.id);
+                $('#clientName').text(`${data.client.prenom} ${data.client.nom}`);
+                $('#clientEmail').text(data.client.email);
+                $('#commandeDate').text(new Date(data.date).toLocaleString());
+                
+                const badgeClass = data.statutLivraison === 'Livré' ? 'badge-livré' : 
+                                data.statutLivraison === 'En attente' ? 'badge-en-attente' : 'badge-annulé';
+                $('#commandeStatut').text(data.statutLivraison).addClass(badgeClass);
+                
+                $('#produitsList').empty();
+                data.produits.forEach(prod => {
+                    $('#produitsList').append(`
+                        <tr>
+                            <td>${prod.designation}</td>
+                            <td>${prod.quantite}</td>
+                            <td>${prod.prixUnitaire.toFixed(2)} DT</td>
+                            <td>${prod.total.toFixed(2)} DT</td>
+                            <td>${prod.points}</td>
+                        </tr>
+                    `);
+                });
+                
+                $('#commandeRemise').text(data.remise);
+                $('#commandeLivraison').text(`${data.montantLivraison.toFixed(2)} DT`);
+                $('#pointsUtilises').text(data.pointsUtilises);
+                $('#pointsGagnes').text(data.pointsGagnes);
+                $('#commandeTotal').text(`${data.montantTotal.toFixed(2)} DT`);
+                
+                const modal = new bootstrap.Modal(document.getElementById('detailsModal'));
+                modal.show();
+            }
+        });
+    </script>
+</body>
+</html>

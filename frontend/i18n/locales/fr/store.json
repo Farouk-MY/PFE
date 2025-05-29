@@ -1,0 +1,74 @@
+{
+  "categories": {
+    "allCategories": "Toutes les catégories"
+  },
+  "filters": {
+    "title": "Filtres",
+    "clearAll": "Tout effacer",
+    "activeFilters": "Filtres actifs",
+    "price": {
+      "title": "Fourchette de prix",
+      "min": "Min",
+      "max": "Max",
+      "to": "à"
+    },
+    "inStock": "En stock uniquement",
+    "rating": "Évaluation minimale",
+    "sort": {
+      "title": "Trier par",
+      "featured": "En vedette",
+      "priceAsc": "Prix: croissant",
+      "priceDesc": "Prix: décroissant",
+      "rating": "Mieux notés",
+      "newest": "Plus récents"
+    },
+    "refineSearch": "Affinez votre recherche de produits",
+    "ratingUp": "& Plus",
+    "availability": "Disponibilité"
+  },
+  "search": {
+    "placeholder": "Rechercher des produits...",
+    "button": "Rechercher",
+    "noResults": "Aucun produit trouvé pour",
+    "tryAgain": "Veuillez essayer un terme différent ou parcourir les catégories"
+  },
+  "pagination": {
+    "showing": "Affichage de",
+    "of": "sur",
+    "products": "produits",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "page": "Page"
+  },
+  "emptyState": {
+    "title": "Aucun produit trouvé",
+    "description": "Nous n'avons trouvé aucun produit correspondant à vos critères.",
+    "clearFilters": "Effacer les filtres"
+  },
+  "favorites": {
+    "add": "Ajouter aux favoris",
+    "remove": "Retirer des favoris",
+    "loginRequired": "Veuillez vous connecter pour ajouter des favoris",
+    "added": "Ajouté aux favoris",
+    "removed": "Retiré des favoris",
+    "error": "Échec de la mise à jour des favoris"
+  },
+  "mobileFilters": {
+    "button": "Filtres et tri",
+    "title": "Filtres et tri",
+    "apply": "Appliquer les filtres",
+    "close": "Fermer"
+  },
+  "products": {
+    "title": "Produits",
+    "inStock": "En stock",
+    "outOfStock": "Rupture de stock",
+    "addToCart": "Ajouter au panier",
+    "viewDetails": "Voir les détails",
+    "reviews": "avis",
+    "noReviews": "Pas encore d'avis",
+    "featured": "EN VEDETTE",
+    "onlyLeft": "Seulement",
+    "leftInStock": "restants en stock"
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "badge": "À Propos",
+  "hero": {
+    "title": "MediaSoft Tunisia",
+    "subtitle": "Votre partenaire technologique de confiance en Tunisie. Nous créons des solutions logicielles innovantes qui transforment les entreprises et stimulent la croissance."
+  },
+  "story": {
+    "badge": "Notre Histoire",
+    "title": "De Startup Tunisienne à Leader IT",
+    "paragraphs": [
+      "Fondée en 2010 à Tunis, MediaSoft a débuté avec une vision claire : démocratiser l'accès aux technologies de pointe pour les entreprises tunisiennes. Ce qui a commencé comme une petite équipe d'ingénieurs passionnés est devenu l'un des leaders du secteur IT en Tunisie.",
+      "Notre parcours est marqué par des projets innovants qui ont révolutionné la façon dont les entreprises locales utilisent la technologie. De nos premiers systèmes de gestion d'entreprise à nos solutions cloud modernes, nous avons toujours été à l'avant-garde de l'innovation technologique.",
+      "Aujourd'hui, MediaSoft est reconnu comme un partenaire technologique de confiance, avec plus de 100 projets réussis et une expertise qui s'étend du développement web et mobile aux solutions d'intelligence artificielle et de transformation digitale."
+    ],
+    "button": "Découvrir Nos Services",
+    "quote": "Notre mission est de transformer les idées en solutions technologiques qui font la différence.",
+    "author": "— Ahmed Ben Salah, PDG & Fondateur"
+  },
+  "values": {
+    "badge": "Nos Valeurs",
+    "title": "Ce Qui Nous Guide",
+    "subtitle": "Nos valeurs fondamentales façonnent notre approche du développement logiciel et de la relation client",
+    "items": [
+      {
+        "title": "Innovation",
+        "description": "Nous restons à la pointe des tendances technologiques, apportant des solutions de pointe à nos clients."
+      },
+      {
+        "title": "Qualité",
+        "description": "Nous livrons des solutions robustes et évolutives qui répondent aux plus hauts standards de performance et de fiabilité."
+      },
+      {
+        "title": "Partenariat",
+        "description": "Nous construisons des relations durables avec nos clients, agissant comme leur partenaire technologique de confiance."
+      },
+      {
+        "title": "Expertise Locale",
+        "description": "Une compréhension approfondie du marché tunisien combinée aux meilleures pratiques internationales."
+      }
+    ]
+  },
+  "services": {
+    "badge": "Nos Expertises",
+    "title": "Solutions Technologiques Complètes",
+    "subtitle": "De la conception à la mise en œuvre, nous couvrons tous vos besoins technologiques",
+    "items": [
+      {
+        "title": "Développement Web",
+        "description": "Applications web modernes et responsives utilisant les dernières technologies."
+      },
+      {
+        "title": "Applications Mobile",
+        "description": "Applications iOS et Android natives et hybrides pour tous vos besoins."
+      },
+      {
+        "title": "Systèmes ERP",
+        "description": "Solutions de gestion d'entreprise personnalisées et intégrées."
+      }
+    ]
+  },
+  "milestones": {
+    "badge": "Notre Parcours",
+    "title": "Étapes Clés",
+    "subtitle": "Les moments déterminants qui ont façonné notre croissance et notre succès",
+    "items": [
+      {
+        "year": "2010",
+        "title": "Création de l'Entreprise",
+        "description": "MediaSoft a été établie à Tunis avec pour mission de fournir des solutions IT innovantes aux entreprises tunisiennes."
+      },
+      {
+        "year": "2013",
+        "title": "Premier Projet Majeur",
+        "description": "Livraison réussie de notre premier système de gestion d'entreprise pour une grande entreprise manufacturière tunisienne."
+      },
+      {
+        "year": "2016",
+        "title": "Lancement du Développement Mobile",
+        "description": "Extension des services pour inclure le développement d'applications mobiles, servant des clients à travers l'Afrique du Nord."
+      },
+      {
+        "year": "2019",
+        "title": "Expert en Solutions Cloud",
+        "description": "Devenu fournisseur certifié de solutions cloud, aidant les entreprises à moderniser leur infrastructure IT."
+      },
+      {
+        "year": "2023",
+        "title": "Reconnaissance Régionale",
+        "description": "Reconnu comme l'un des principaux fournisseurs de services IT de Tunisie avec plus de 100 projets réussis livrés."
+      }
+    ]
+  },
+  "team": {
+    "badge": "Notre Équipe",
+    "title": "Les Experts Derrière MediaSoft",
+    "subtitle": "Une équipe talentueuse d'ingénieurs, designers et stratègues technologiques",
+    "members": [
+      {
+        "name": "Ahmed Ben Salah",
+        "role": "PDG & Fondateur",
+        "bio": "Expert en ingénierie logicielle avec plus de 20 ans d'expérience dans l'industrie technologique tunisienne. A fondé MediaSoft pour fournir des solutions IT de classe mondiale."
+      },
+      {
+        "name": "Fatma Trabelsi",
+        "role": "Directrice Technique",
+        "bio": "Ancienne développeuse senior dans de grandes entreprises technologiques européennes. Dirige notre innovation technique et architecture logicielle."
+      },
+      {
+        "name": "Karim Mansouri",
+        "role": "Chef du Développement",
+        "bio": "Spécialiste du développement full-stack axé sur la création d'applications web et mobiles évolutives pour diverses industries."
+      },
+      {
+        "name": "Amina Bouaziz",
+        "role": "Directrice UX/UI",
+        "bio": "Designer primée spécialisée dans la création d'expériences utilisateur intuitives et engageantes pour des applications métier complexes."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Prêt à Transformer Votre Entreprise ?",
+    "subtitle": "Découvrez comment MediaSoft peut vous aider à atteindre vos objectifs technologiques et accélérer votre croissance.",
+    "buttons": {
+      "services": "Voir Nos Services",
+      "contact": "Nous Contacter"
+    }
+  }
+}

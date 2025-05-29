@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paiement par carte</title>
+    <script src="https://js.stripe.com/v3/"></script>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; }
+        .card-element { border: 1px solid #ccc; padding: 10px; border-radius: 4px; margin: 20px 0; }
+        button { background: #4CAF50; color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; }
+        button:disabled { background: #cccccc; }
+        #payment-message { color: #dc3545; margin: 20px 0; }
+        .loader { border: 4px solid #f3f3f3; border-top: 4px solid #3498db; border-radius: 50%; width: 30px; height: 30px; animation: spin 1s linear infinite; margin: 20px auto; display: none; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+    <h1>Paiement sécurisé</h1>
+    <p>Montant à payer: <strong><span id="amount"></span> €</strong></p>
+    
+    <form id="payment-form">
+        <div id="card-element" class="card-element"></div>
+        <button id="submit-button">Payer</button>
+        <div id="payment-message"></div>
+        <div id="loader" class="loader"></div>
+    </form>
+
+    <script>
+        const stripe = Stripe('pk_test_your_publishable_key');
+        const urlParams = new URLSearchParams(window.location.search);
+        const clientSecret = urlParams.get('clientSecret');
+        const commandeId = urlParams.get('commandeId');
+        const amount = urlParams.get('amount');
+
+        if (!clientSecret || !commandeId || !amount) {
+            window.location.href = '/';
+        }
+
+        document.getElementById('amount').textContent = amount;
+
+        const elements = stripe.elements();
+        const cardElement = elements.create('card');
+        cardElement.mount('#card-element');
+
+        const form = document.getElementById('payment-form');
+        const submitButton = document.getElementById('submit-button');
+        const paymentMessage = document.getElementById('payment-message');
+        const loader = document.getElementById('loader');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            submitButton.disabled = true;
+            loader.style.display = 'block';
+            paymentMessage.textContent = '';
+
+            const { error, paymentIntent } = await stripe.confirmCardPayment(clientSecret, {
+                payment_method: {
+                    card: cardElement,
+                    billing_details: {
+                        name: 'Client' // Vous pouvez ajouter un champ pour le nom du titulaire si nécessaire
+                    }
+                }
+            });
+
+            if (error) {
+                loader.style.display = 'none';
+                submitButton.disabled = false;
+                paymentMessage.textContent = error.message || 'Erreur lors du paiement';
+                return;
+            }
+
+            if (paymentIntent.status === 'succeeded') {
+                try {
+                    const response = await fetch('/api/commande/confirm-payment', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            commande_id: commandeId,
+                            paymentIntentId: paymentIntent.id
+                        })
+                    });
+
+                    if (response.ok) {
+                        // Télécharger le PDF directement
+                        const blob = await response.blob();
+                        const url = window.URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.href = url;
+                        a.download = `facture-${commandeId}.pdf`;
+                        document.body.appendChild(a);
+                        a.click();
+                        window.URL.revokeObjectURL(url);
+                        
+                        // Redirection après 3 secondes
+                        setTimeout(() => {
+                            window.location.href = '/historique-achats';
+                        }, 3000);
+                    } else {
+                        throw new Error('Erreur serveur');
+                    }
+                } catch (err) {
+                    loader.style.display = 'none';
+                    submitButton.disabled = false;
+                    paymentMessage.textContent = 'Erreur lors de la confirmation du paiement';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

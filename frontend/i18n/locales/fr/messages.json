@@ -1,0 +1,23 @@
+{
+  "title": "Messages des clients",
+  "subtitle": "Gérer les conversations des clients",
+  "supportTeam": "Équipe de support",
+  "typeMessage": "Tapez votre message...",
+  "sendMessage": "Envoyer le message",
+  "connected": "Connecté",
+  "disconnected": "Déconnecté",
+  "searchCustomers": "Rechercher des clients...",
+  "online": "En ligne",
+  "offline": "Hors ligne",
+  "viewProfile": "Voir le profil",
+  "viewOrders": "Voir les commandes",
+  "markAsRead": "Marquer comme lu",
+  "markAsUnread": "Marquer comme non lu",
+  "markAsResolved": "Marquer comme résolu",
+  "blockUser": "Bloquer l'utilisateur",
+  "noMessages": "Pas encore de messages",
+  "startConversation": "Sélectionnez une conversation pour commencer à échanger",
+  "noConversationSelected": "Aucune conversation sélectionnée",
+  "selectCustomer": "Sélectionnez un client dans la barre latérale pour voir les messages",
+  "browseConversations": "Parcourir les conversations"
+}

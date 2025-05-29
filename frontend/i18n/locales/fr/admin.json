@@ -1,0 +1,17 @@
+{
+  "adminPanel": "Panneau d'administration",
+  "manageStore": "Gérer votre boutique",
+  "theme": "Thème",
+  "notifications": "Notifications",
+  "messages": "Messages",
+  "logout": "Déconnexion",
+  "dashboard": "Tableau de bord",
+  "analytics": "Analytique",
+  "orders": "Commandes",
+  "products": "Produits",
+  "categories": "Catégories",
+  "customers": "Clients",
+  "aiData": "Données IA",
+  "reports": "Rapports",
+  "settings": "Paramètres"
+}
